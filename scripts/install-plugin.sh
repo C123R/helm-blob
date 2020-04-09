@@ -11,15 +11,15 @@ echo "Downloading and installing helm-blob v${version} ..."
 # Downloding binary from github
 url=""
 if [ "$(uname)" = "Darwin" ]; then
-    url="https://github.com/C123R/helm-blob/releases/download/v${version}/helm-blob_darwin_amd64_${version}.tar.gz"
+    url="https://github.com/C123R/helm-blob/releases/download/v${version}/helm-blob_darwin_amd64_v${version}.tar.gz"
 elif [ "$(uname)" = "Linux" ]; then
     if [ "$(uname -m)" = "aarch64" ] || [ "$(uname -m)" = "arm64" ]; then
-        url="https://github.com/C123R/helm-blob/releases/download/v${version}/helm-blob_linux_arm64_${version}.tar.gz"
+        url="https://github.com/C123R/helm-blob/releases/download/v${version}/helm-blob_linux_arm64_v${version}.tar.gz"
     else
-        url="https://github.com/C123R/helm-blob/releases/download/v${version}/helm-blob__linux_amd64_${version}.tar.gz"
+        url="https://github.com/C123R/helm-blob/releases/download/v${version}/helm-blob__linux_amd64_v${version}.tar.gz"
     fi
 else
-    url="https://github.com/C123R/helm-blob/releases/download/v${version}/helm-blob_windows_amd64_${version}.tar.gz"
+    url="https://github.com/C123R/helm-blob/releases/download/v${version}/helm-blob_windows_amd64_v${version}.tar.gz"
 fi
 
 echo "$url"
@@ -39,7 +39,7 @@ tar xzf "releases/v${version}.tar.gz" -C "releases/v${version}"
 mv "releases/v${version}/helm-blob" "bin/helm-blob" ||
     mv "releases/v${version}/helm-blob.exe" "bin/helm-blob"
 
-mv "releases/v${version}/scripts/helm-blob.sh" .
+mv "releases/v${version}/scripts/proxy.sh" .
 mv "releases/v${version}/plugin.yaml" .
 mv "releases/v${version}/README.md" .
 mv "releases/v${version}/LICENSE" .

@@ -1,4 +1,4 @@
-# helm-blob [![Build Status](https://travis-ci.org/C123R/helm-blob.svg?branch=master)](https://travis-ci.org/C123R/helm-blob)
+# helm-blob [![Build Status](https://travis-ci.com/C123R/helm-blob.svg?token=9FxxpxQR16mxxejVyCbA&branch=master)](https://travis-ci.com/C123R/helm-blob)
 
 `helm-blob` plugin allows you to manage helm repositories on the blob storage like Azure Blob, GCS, S3, etc.
 

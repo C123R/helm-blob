@@ -5,8 +5,8 @@ description: |-
   Manage chart repositories on Blob Storage(Azure Blob, GCS, S3).
 command: "$HELM_PLUGIN_DIR/bin/helm-blob"
 hooks:
-  install: "cd $HELM_PLUGIN_DIR; scripts/install_plugin.sh"
-  update: "cd $HELM_PLUGIN_DIR; scripts/install_plugin.sh"
+  install: "cd $HELM_PLUGIN_DIR; scripts/install-plugin.sh"
+  update: "cd $HELM_PLUGIN_DIR; scripts/install-plugin.sh"
 downloaders:
   - command: "/bin/proxy.sh"
     protocols:

@@ -13,15 +13,15 @@ builds:
     goarch:
       - amd64
       - arm64
-archive:
-  format: tar.gz
-  files:
-    - README.md
-    - LICENSE
-    - plugin.yaml
-    - scripts/install_plugin.sh
-    - scripts/helm-blob.sh
-  name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}_{{ .Tag }}"
+archives:
+  - format: tar.gz
+    files:
+      - README.md
+      - LICENSE
+      - plugin.yaml
+      - scripts/install-plugin.sh
+      - scripts/proxy.sh
+    name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}_{{ .Tag }}"
 checksum:
   name_template: "checksums.txt"
 snapshot:
