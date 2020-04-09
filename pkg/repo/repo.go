@@ -6,11 +6,12 @@ import (
 	"os"
 
 	"github.com/C123R/helm-blob/pkg/blob"
-	"gopkg.in/yaml.v2"
-	"helm.sh/helm/pkg/chart/loader"
-	"helm.sh/helm/pkg/helmpath"
-	"helm.sh/helm/pkg/provenance"
-	helmrepo "helm.sh/helm/pkg/repo"
+	"sigs.k8s.io/yaml"
+
+	"helm.sh/helm/v3/pkg/chart/loader"
+	"helm.sh/helm/v3/pkg/helmpath"
+	"helm.sh/helm/v3/pkg/provenance"
+	helmrepo "helm.sh/helm/v3/pkg/repo"
 )
 
 type IndexFile helmrepo.IndexFile
@@ -68,10 +69,6 @@ func (r Repo) Init() error {
 	if err := r.blob.Upload(index, indexInByte); err != nil {
 		return err
 	}
-	fmt.Printf(`Successfully initialized %s.
-
-Now you can add this repo using 'helm repo add <repo-name> %s'`, r.url, r.url)
-	fmt.Println()
 	return nil
 }
 
@@ -87,7 +84,6 @@ func (r Repo) Push(chartpath string, force bool) error {
 	if err != nil {
 		return fmt.Errorf("Error loading chart: %v", err)
 	}
-
 	// check if specified chart with version is present or not?
 	if repoIndex.Has(c.Metadata.Name, c.Metadata.Version) && !force {
 		return fmt.Errorf("%s with version %s is already present. Use --force/-f for force uploading!", c.Metadata.Name, c.Metadata.Version)
@@ -169,9 +165,9 @@ func (r Repo) Delete(chartName string, version string) error {
 }
 
 // Fetch gets file for provided repoURL
-func (r Repo) Fetch() error {
+func (r Repo) Fetch(filename string) error {
 
-	repoIndex, err := r.blob.Download(index)
+	repoIndex, err := r.blob.Download(filename)
 	if err != nil {
 		return fmt.Errorf("Looks like %s is not a valid chart repository or cannot be reached: %v", r.url, err)
 	}

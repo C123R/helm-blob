@@ -10,7 +10,7 @@ var version string
 // deleteCmd represents the delete command
 var deleteCmd = &cobra.Command{
 	Use:   "delete <chart-name> <repo-name>",
-	Short: "deletes a chart from repository",
+	Short: "Deletes a chart from repository",
 	Args:  cobra.MinimumNArgs(2),
 	Long: `
 Delete command deletes a chart from a remote repository.

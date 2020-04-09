@@ -1,6 +1,8 @@
 package cmd
 
 import (
+	"fmt"
+
 	"github.com/C123R/helm-blob/pkg/repo"
 	"github.com/spf13/cobra"
 )
@@ -8,7 +10,7 @@ import (
 // initCmd represents the init command
 var initCmd = &cobra.Command{
 	Use:   "init <blob-url>",
-	Short: "initialize new repository",
+	Short: "Initialize new repository",
 	Args:  cobra.ExactValidArgs(1),
 	Long: `
 Init command will initialize a new helm repository on provided blob url.
@@ -25,6 +27,10 @@ it will just add empty index.yaml file.
 		if err = r.Init(); err != nil {
 			return err
 		}
+		fmt.Printf(`Successfully initialized %s.
+
+Now you can add this repo using 'helm repo add <repo-name> %s'`, repoUrl, repoUrl)
+		fmt.Println()
 		return nil
 	},
 }
