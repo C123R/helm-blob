@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: {{ include "mychart.fullname" . }}
   labels:
-    {{- include "mychart.labels" . | nindent 4 }}
+{{ include "mychart.labels" . | indent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,5 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "mychart.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/name: {{ include "mychart.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}

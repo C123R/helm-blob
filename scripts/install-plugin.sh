@@ -22,8 +22,6 @@ else
     url="https://github.com/C123R/helm-blob/releases/download/v${version}/helm-blob_windows_amd64_v${version}.tar.gz"
 fi
 
-echo "$url"
-
 # Installing binary
 
 mkdir -p "bin"
