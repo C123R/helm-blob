@@ -37,9 +37,9 @@ tar xzf "releases/v${version}.tar.gz" -C "releases/v${version}"
 mv "releases/v${version}/helm-blob" "bin/helm-blob" ||
     mv "releases/v${version}/helm-blob.exe" "bin/helm-blob"
 
-mv "releases/v${version}/scripts/proxy.sh" .
-mv "releases/v${version}/plugin.yaml" .
-mv "releases/v${version}/README.md" .
-mv "releases/v${version}/LICENSE" .
+mv "releases/v${version}/scripts/proxy.sh" "bin/proxy.sh"
+mv "releases/v${version}/plugin.yaml" "bin/plugin.yaml"
+mv "releases/v${version}/README.md" "bin/README.md"
+mv "releases/v${version}/LICENSE" "bin/LICENSE"
 
 rm -rf "releases/v${version}.tar.gz"
