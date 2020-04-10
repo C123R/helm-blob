@@ -11,19 +11,34 @@ This plugin uses Go Cloud's [Blob](https://gocloud.dev/howto/blob/) package.
 ## Installation
 
 ```sh
-helm plugin install https://github.com/C123R/helm-blob
+helm plugin install https://github.com/C123R/helm-blob.git
+```
+
+To install specific version of:
+
+```sh
+helm plugin install https://github.com/C123R/helm-blob.git --version 0.2.0
+```
+
+### If you are still using Helm Below Version 3:
+
+```sh
+helm plugin install https://github.com/C123R/helm-blob.git --version 0.1.0
 ```
 
 ## Usage
+
+**Note:** This plugin will not provide new blob storage, You must first create blob storage container/bucket that will be used as a remote chart repository.
 
 - ### Initialize a new chart repository
 
   ```sh
   helm blob init azblob://helmrepo
-  ```
 
-  Note: This command will not create new blob storage, moreover
-  it will just add empty index.yaml file.
+  OR
+
+  helm blob init gs://helmrepo/charts
+  ```
 
 - ### Add your repository to Helm
 
