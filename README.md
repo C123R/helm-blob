@@ -55,8 +55,10 @@ helm plugin install https://github.com/C123R/helm-blob.git --version 0.1.0
   You can also push multiple charts from specific directory:
 
   ```sh
-  helm blob push charts/ gcsblob azurehelm
+  helm blob push helm-charts/ gcsblob azurehelm
   ```
+
+  This will publish all charts under helm-charts directory.
 
 - ### Updating Helm cache (Required after pushing new chart)
 
