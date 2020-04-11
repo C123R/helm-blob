@@ -8,11 +8,10 @@ import (
 	"github.com/C123R/helm-blob/pkg/blob"
 	"sigs.k8s.io/yaml"
 
-	"k8s.io/helm/pkg/chartutil"
-	"k8s.io/helm/pkg/helm/environment"
-	"k8s.io/helm/pkg/helm/helmpath"
-	"k8s.io/helm/pkg/provenance"
-	helmrepo "k8s.io/helm/pkg/repo"
+	"helm.sh/helm/v3/pkg/chart/loader"
+	"helm.sh/helm/v3/pkg/helmpath"
+	"helm.sh/helm/v3/pkg/provenance"
+	helmrepo "helm.sh/helm/v3/pkg/repo"
 )
 
 type IndexFile helmrepo.IndexFile
@@ -81,7 +80,7 @@ func (r Repo) Push(chartpath string, force bool) error {
 	if err != nil {
 		return fmt.Errorf("Looks like %s is not a valid chart repository or cannot be reached: %v", r.name, err)
 	}
-	c, err := chartutil.Load(chartpath)
+	c, err := loader.Load(chartpath)
 	if err != nil {
 		return fmt.Errorf("Error loading chart: %v", err)
 	}
@@ -223,11 +222,9 @@ func (r Repo) uploadChart(chartpath string) error {
 
 func getRepoUrl(repoName string) (string, error) {
 
+	repositoryConfigPath := envOr("HELM_REPOSITORY_CONFIG", helmpath.ConfigPath("repositories.yaml"))
 	var repoUrl string
-	repositoryConfigPath := envOr("HELM_HOME", environment.DefaultHelmHome)
-	helmconfig := helmpath.Home(repositoryConfigPath)
-
-	f, err := helmrepo.LoadRepositoriesFile(helmconfig.RepositoryFile())
+	f, err := helmrepo.LoadFile(repositoryConfigPath)
 	if err != nil {
 		return repoUrl, err
 	}
