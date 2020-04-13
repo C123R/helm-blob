@@ -23,7 +23,7 @@ helm plugin install https://github.com/C123R/helm-blob.git --version 0.2.0
 ### If you are still using Helm Below Version 3:
 
 ```sh
-helm plugin install https://github.com/C123R/helm-blob.git --version 0.1.0
+helm plugin install https://github.com/C123R/helm-blob.git --version 0.1.1
 ```
 
 ## Usage
