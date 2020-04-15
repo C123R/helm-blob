@@ -35,7 +35,7 @@ changelog:
 
 dockers:
   - image_templates:
-      - docker.pkg.github.com/c123r/helm-blob/helm-blob:latest
+      # - docker.pkg.github.com/c123r/helm-blob/helm-blob:latest
       - registry.gitlab.com/c123r/helm-blob/helm-blob:v1
 
 release:
