@@ -36,6 +36,7 @@ changelog:
 dockers:
   - image_templates:
       - docker.pkg.github.com/c123r/helm-blob/helm-blob:latest
+      - zeissvstsagentacr.azurecr.io/c123r/helm-blob/helm-blob:latest
 
 release:
   disable: true
