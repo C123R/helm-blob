@@ -35,8 +35,8 @@ changelog:
 
 dockers:
   - image_templates:
-      - docker.pkg.github.com/goreleaser/github-action-test/test:latest
-      # - example.azurecr.io/c123r/goreleaser/helm-blob:v1
+      # - docker.pkg.github.com/c123r/github-action-test/test:latest
+      - registry.gitlab.com/goreleaser/goreleaser/helm-blob:v1
 
 release:
   disable: true
