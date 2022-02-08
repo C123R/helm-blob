@@ -11,19 +11,19 @@ This plugin uses Go Cloud's [Blob](https://gocloud.dev/howto/blob/) package.
 ## Installation
 
 ```sh
-helm plugin install https://github.com/C123R/helm-blob.git
+helm plugin install https://github.com/PTC-Global/helm-blob.git
 ```
 
 To install specific version of:
 
 ```sh
-helm plugin install https://github.com/C123R/helm-blob.git --version 0.3.1
+helm plugin install https://github.com/PTC-Global/helm-blob.git --version 0.3.1
 ```
 
 ### If you are still using Helm Below Version 3:
 
 ```sh
-helm plugin install https://github.com/C123R/helm-blob.git --version 0.1.1
+helm plugin install https://github.com/PTC-Global/helm-blob.git --version 0.1.1
 ```
 
 ## Usage

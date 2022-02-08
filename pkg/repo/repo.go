@@ -105,7 +105,8 @@ func (r Repo) Push(chartpath string, force bool) error {
 	if err != nil {
 		return err
 	}
-	repoIndex.Add(c.Metadata, getChartFileName(chartpath), r.url, hash)
+	// We are emptying the repo URL to avoid issues with previous implementations.
+	repoIndex.Add(c.Metadata, getChartFileName(chartpath), "", hash)
 	if err := r.updateIndex(repoIndex); err != nil {
 		return err
 	}
