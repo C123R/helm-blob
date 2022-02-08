@@ -11,15 +11,15 @@ echo "Downloading and installing helm-blob v${version} ..."
 # Downloding binary from github
 url=""
 if [ "$(uname)" = "Darwin" ]; then
-    url="https://github.com/C123R/helm-blob/releases/download/v${version}/helm-blob_darwin_amd64_v${version}.tar.gz"
+    url="https://github.com/PTC-Global/helm-blob/releases/download/v${version}/helm-blob_darwin_amd64_v${version}.tar.gz"
 elif [ "$(uname)" = "Linux" ]; then
     if [ "$(uname -m)" = "aarch64" ] || [ "$(uname -m)" = "arm64" ]; then
-        url="https://github.com/C123R/helm-blob/releases/download/v${version}/helm-blob_linux_arm64_v${version}.tar.gz"
+        url="https://github.com/PTC-Global/helm-blob/releases/download/v${version}/helm-blob_linux_arm64_v${version}.tar.gz"
     else
-        url="https://github.com/C123R/helm-blob/releases/download/v${version}/helm-blob_linux_amd64_v${version}.tar.gz"
+        url="https://github.com/PTC-Global/helm-blob/releases/download/v${version}/helm-blob_linux_amd64_v${version}.tar.gz"
     fi
 else
-    url="https://github.com/C123R/helm-blob/releases/download/v${version}/helm-blob_windows_amd64_v${version}.tar.gz"
+    url="https://github.com/PTC-Global/helm-blob/releases/download/v${version}/helm-blob_windows_amd64_v${version}.tar.gz"
 fi
 
 # Installing binary

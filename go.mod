@@ -1,4 +1,4 @@
-module github.com/C123R/helm-blob
+module github.com/PTC-Global/helm-blob
 
 go 1.13
 

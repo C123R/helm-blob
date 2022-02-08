@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/C123R/helm-blob/pkg/blob"
+	"github.com/PTC-Global/helm-blob/pkg/blob"
 	"sigs.k8s.io/yaml"
 
 	"helm.sh/helm/v3/pkg/chart/loader"

@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/C123R/helm-blob/pkg/repo"
+	"github.com/PTC-Global/helm-blob/pkg/repo"
 	"github.com/spf13/cobra"
 )
 
