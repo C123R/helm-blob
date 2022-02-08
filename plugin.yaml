@@ -1,5 +1,5 @@
 name: "blob"
-version: "0.3.1"
+version: "0.3.1-alpha"
 usage: "(Helm v3) Manage chart repositories on Blob Storage(Azure Blob, GCS, S3)"
 description: |-
   (Helm v3) Manage chart repositories on Blob Storage(Azure Blob, GCS, S3).
